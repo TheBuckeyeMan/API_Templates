@@ -20,7 +20,7 @@ public class AppConfig {
 
     @Bean
     public BearerTokenInterceptor bearerTokenInterceptor(){
-        return new BearerTokenInterceptor(System.getenv("<Add Environment Variable Here for Bearer Token>"));
+        return new BearerTokenInterceptor("<Add Environment Variable Here for Bearer Token>");
     }
 }
 
