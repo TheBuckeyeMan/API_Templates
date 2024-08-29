@@ -1,5 +1,8 @@
 package base.template.template.service;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
@@ -29,7 +32,7 @@ public class TemplateService {
             String jsonResponse = objectMapper.writeValueAsString(model);
             log.info("Recieved JSON Response from external API: {}", jsonResponse);//Log the JSON Response from Extenral API
                 if (model != null) {
-                    log.info("Model Successful Build!");
+                    saveToFile(model);
                 }
                 } catch (HttpStatusCodeException e) {
                     log.error("Recieved an error response from API: {}", e.getResponseBodyAsString(), e);//log error if an error status code is returned
@@ -37,5 +40,15 @@ public class TemplateService {
                     log.error("An Error Occured while making the reques tto external API: {}", e);
                 }
        return model;
+    }
+    private void saveToFile(Model model) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("<Name Of Your File Here>.<File Extension>"))){
+            //ADD IN ALL DATA POINTS TO WRITE TO FILE HERE - FOR BIG API'S WE WILL HAVE MORE HERE
+            writer.write("<Identifier of Value>" + model.<Getter for this value found in models> + "\n");
+            writer.write("<Identifier of Value>" + model.<Getter for this value found in models> + "\n");
+            writer.write("<Identifier of Value>" + model.<Getter for this value found in models> + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
