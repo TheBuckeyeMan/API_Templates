@@ -13,6 +13,4 @@ import lombok.Setter;
 public class Model {
     //Add all values we expect to see in the response and data types
     private String placeholder;
-
-    //Constructor - Add all additional data points
 }
