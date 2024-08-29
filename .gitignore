@@ -21,5 +21,8 @@ Thumbs.db
 target*/
 target/*
 
+#Exclude Environment Variable
+.env
+
 
 
