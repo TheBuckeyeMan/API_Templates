@@ -14,7 +14,7 @@ public class AppConfig {
     @Bean
     public RestTemplate restTemplate(BearerTokenInterceptor bearerTokenInterceptor, ToExternalLoggingInterceptor toExternalLoggingInterceptor,IncommingLoggingInterceptor incommingLoggingInterceptor){
         RestTemplate restTemplate = new RestTemplate();
-        restTemplate.setInterceptors(Arrays.asList(incommingLoggingInterceptor,toExternalLoggingInterceptor)); //If we have any other requests we want to intercept, we can capture them registering here
+        restTemplate.setInterceptors(Arrays.asList(bearerTokenInterceptor, incommingLoggingInterceptor,toExternalLoggingInterceptor)); //If we have any other requests we want to intercept, we can capture them registering here
         return restTemplate;
     }
 
