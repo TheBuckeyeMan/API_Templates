@@ -8,7 +8,7 @@ on:
       - main 
       - dev
       - test
-      - <Your_branch_name_here>
+      - delete
 
 jobs:
   build-and-deploy:
@@ -41,9 +41,9 @@ jobs:
 
       - name: Build Docker image # Edit regions if you would like to deploy to different regions
         run: |
-          docker build -t <dockerhub username>/<dockerhub repository>:<name_you_want_your_image_to_be> .
+          docker build -t thebuckeyeman20/api:ninja .
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker push <dockerhub username>/<dockerhub repository>:<name_you_want_your_image_to_be>
+          docker push thebuckeyeman20/api:ninja
 

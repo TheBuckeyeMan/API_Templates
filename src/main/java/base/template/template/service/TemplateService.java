@@ -23,7 +23,7 @@ public class TemplateService {
 
     //Make getter method for our model
     public List<Model> getModel(){
-        String url = "<Your URL Here>";
+        String url = "https://api.api-ninjas.com/v1/facts";
 
         List<Model> model = null;
         try {

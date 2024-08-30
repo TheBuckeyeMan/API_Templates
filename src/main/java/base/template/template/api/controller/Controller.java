@@ -18,7 +18,7 @@ public class Controller {
     //Initialize new instance of the service for the controller
     private final TemplateService templateService;
 
-    @GetMapping("/<Name_of_Endpoint_to_call_to_trigger_api>")
+    @GetMapping("/test")
     public List<Model> getModel(){
         List<Model> model = templateService.getModel();
         return model;
