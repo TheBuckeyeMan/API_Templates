@@ -59,6 +59,12 @@
 			<artifactId>s3</artifactId>
 			<version>2.17.46</version>
 		</dependency>
+		<!--Add dependency so we can trigger this lambda in the aws way, not traditional http-->
+		<dependency>
+			<groupId>com.amazonaws.serverless</groupId>
+			<artifactId>aws-serverless-java-container-springboot2</artifactId>
+			<version>1.6.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>

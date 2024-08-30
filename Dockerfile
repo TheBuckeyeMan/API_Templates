@@ -1,4 +1,9 @@
-FROM openjdk:17-jdk
+FROM openjdk:17-jdk-slim
 ARG JAR_FILE=./target/template-0.0.1-SNAPSHOT.jar
-COPY target/template-0.0.1-SNAPSHOT.jar app.jar
+COPY ${JAR_FILE} app.jar
+
+# Switch to non-root user (optional but recommended for security)
+RUN useradd -m appuser && chown -R appuser /app
+USER appuser
+
 ENTRYPOINT ["java","-jar","app.jar"]
