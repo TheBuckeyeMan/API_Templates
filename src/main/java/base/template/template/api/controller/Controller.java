@@ -7,7 +7,7 @@ import base.template.template.api.model.Model;
 import base.template.template.service.TemplateService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-
+import java.util.List;
 
 //Entire purpose of the controller is to expose the api endpoints and trigger the api
 @RestController
@@ -19,8 +19,8 @@ public class Controller {
     private final TemplateService templateService;
 
     @GetMapping("/<Name_of_Endpoint_to_call_to_trigger_api>")
-    public Model getModel(){
-        Model model = templateService.getModel();
+    public List<Model> getModel(){
+        List<Model> model = templateService.getModel();
         return model;
     }
 }
